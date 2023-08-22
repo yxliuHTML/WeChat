@@ -55,6 +55,7 @@
 						<yCard ref="yCard"></yCard>
 					</view>
 				</scroll-view>
+				<yTabbar :currentIndex="0" ref="yTabbar"></yTabbar>
 			</swiper-item>
 		</swiper>
 	</view>
@@ -63,10 +64,12 @@
 <script>
 	import yCard from '@/components/y-card.vue'
 	import yCover from '@/components/y-cover.vue'
+	import yTabbar from '@/components/y-table-bar.vue'
 	export default {
 		components: {
 			yCard,
-			yCover
+			yCover,
+			yTabbar
 		},
 		data() {
 			return {
