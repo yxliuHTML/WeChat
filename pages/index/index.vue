@@ -7,8 +7,7 @@
 			<swiper-item>
 				<scroll-view style="height: 100vh;white-space: nowrap;" @scroll="onScroll" id="scroller" scroll-y="true"
 					refresher-enabled="true" :refresher-triggered="triggered" :refresher-threshold="100"
-					refresher-background="#232326" @refresherrefresh="onRefresh"
-					@refresherrestore="onRestore">
+					refresher-background="#232326" @refresherrefresh="onRefresh" @refresherrestore="onRestore">
 					<view class="container">
 						<!-- 当前门店信息 -->
 						<view class="container-store flex" :style="{ paddingTop: iStatusBarHeight + 'px' }">
@@ -19,9 +18,11 @@
 							<image class="container-store-icon" src="/static/toggle-l.png"></image>
 						</view>
 						<!-- 当前门店信息 end-->
-						<view class="swiper-box">
-							<u-swiper height="332rpx" radius="16rpx" :autoplay="false" :list="banner"></u-swiper>
-						</view>
+						<swiper class="swiper-box" circular :duration="300">
+							<swiper-item v-for=" (item, index) in banner" :key="index" @click="skip">
+								<image :src="item"></image>
+							</swiper-item>
+						</swiper>
 						<view class="four-box">
 							<image class="four-box-img" v-for=" (item, index) in four" :key="index" :src="item"></image>
 						</view>
@@ -118,7 +119,7 @@
 				keyword: "",
 				triggered: false,
 				_freshing: false,
-				top: 0
+				top: 0,
 			}
 		},
 		computed: {
@@ -147,6 +148,11 @@
 			},
 			onRestore() {
 				this.triggered = 'restore'; // 需要重置
+			},
+			skip() {
+				uni.navigateTo({
+					url: `/pages/order/index`
+				})
 			}
 		}
 	}
@@ -190,7 +196,17 @@
 
 	// banner
 	.swiper-box {
+		height: 332rpx;
 		margin-bottom: 20rpx;
+		border-radius: 16rpx;
+		overflow: hidden;
+
+		image {
+			width: 100%;
+			height: 100%;
+			border-radius: 16rpx;
+			overflow: hidden;
+		}
 	}
 
 	// 图片导航

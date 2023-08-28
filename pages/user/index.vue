@@ -1,8 +1,11 @@
 <template>
-	<view>
+	<view style="height:100vh;background: #232326;">
 		<!-- 天气模块 -->
-		<view class="weather--partial-weather">
-			<view class="partial-weather__ctx weather--partial-weather__ctx flex weather--flex">
+		<view class="weather--partial-weather" style="padding-top: 88rpx;">
+			<view class="weather--partial-weather__bg" style="opacity: 0;">
+
+			</view>
+			<view class="partial-weather__ctx weather--partial-weather__ctx flex">
 				<image src="/static/101.png"></image>
 				<view class="partial-weather__meta">
 					<text class="partial-weather__title weather--partial-weather__title">晴</text>
@@ -13,7 +16,6 @@
 			</view>
 		</view>
 		<!-- 天气模块 end -->
-
 		<view class="user-box">
 			<view class="user-bg">
 				<image src="../../static/132.jpg"></image>
@@ -39,21 +41,29 @@
 		</view>
 		<view class="partial-meta">
 			<view class="partial-meta-achievement">
-				<view class="partial-meta-achievement-item">
-					<text>粉丝</text>
+				<view class="partial-meta-achievement-item flex">
+					<view>粉丝</view>
 					<text>0</text>
 				</view>
 				<view class="flex">
 					<image class="meta-coin" src="../../static/coin.png"></image>
-					<text>0</text>
-					<view class="meta-i">
-
+					<text class="meta-text">0</text>
+					<view class="meta-i"></view>
+				</view>
+			</view>
+			<view class="portals-box flex">
+				<view class="portals-box-item" v-for="(item,index) in portals" :key="index">
+					<view class="portals-box-item-thumb">
+						<image class="portals-box-item-thumbnail" :src="item.icon" mode=""></image>
+					</view>
+					<view class="portals-box-item-title">
+						{{item.title}}
 					</view>
 				</view>
 			</view>
 		</view>
 		<!-- 底部 -->
-		<yTabbar :currentIndex="1" ref="yTabbar"></yTabbar>
+		<yTabbar :currentIndex="2" ref="yTabbar"></yTabbar>
 	</view>
 </template>
 
@@ -63,6 +73,26 @@
 		components: {
 			yTabbar
 		},
+		data() {
+			return {
+				portals: [{
+					icon: '../../static/payment-icon.png',
+					title: '买单'
+				}, {
+					icon: '../../static/order.png',
+					title: '订单'
+				}, {
+					icon: '../../static/wallet.png',
+					title: '钱包'
+				}, {
+					icon: '../../static/coupon.png',
+					title: '优惠券'
+				}, {
+					icon: '../../static/bureaus.png',
+					title: '活动'
+				}]
+			}
+		}
 	}
 </script>
 
@@ -127,6 +157,7 @@
 			display: flex;
 			justify-content: space-between;
 			box-sizing: border-box;
+			line-height: 1;
 
 			.user-name {
 				font-size: 40rpx;
@@ -149,6 +180,7 @@
 				display: inline-block;
 				margin-bottom: 16rpx;
 				padding: 6rpx 16rpx;
+				line-height: 1;
 
 				image {
 					display: inline-block;
@@ -169,7 +201,7 @@
 		}
 	}
 
-	// 粉丝 金刚区
+	// 粉丝
 	.partial-meta {
 		background: #232326;
 		border-top-left-radius: 40rpx;
@@ -184,6 +216,13 @@
 			display: flex;
 			margin: 0 50rpx;
 			padding: 40rpx 0;
+			justify-content: space-between;
+			color: #fff;
+
+			text {
+				margin-left: 8rpx;
+				opacity: .4;
+			}
 
 			&-item {
 				font-size: 26rpx;
@@ -198,7 +237,8 @@
 			opacity: .2;
 			vertical-align: -1px;
 			width: 9px;
-			background-image: url(https://assets.deerscript.com/i/right-l.png);
+			background-image: url(../../static/right-l.png);
+			background-size: 100% 100%;
 		}
 
 		.meta-coin {
@@ -206,15 +246,66 @@
 			margin-right: 8rpx;
 			width: 40rpx;
 		}
+
+		.meta-text {
+			color: #f19e55;
+			font-size: 26rpx;
+			font-weight: 700;
+			opacity: 1;
+		}
+	}
+
+	// 金刚区
+	.portals-box {
+		background: #2f2e33;
+		border-radius: 16rpx;
+		justify-content: space-around;
+		margin: 0 30rpx;
+		padding: 24rpx 0;
+
+		&-item {
+			display: inline-block;
+			text-align: center;
+
+			&-thumb {
+				height: 60rpx;
+				margin: 0 auto 16rpx;
+				position: relative;
+				width: 60rpx;
+			}
+
+			&-thumbnail {
+				height: 100%;
+				width: 100%;
+			}
+
+			&-title {
+				font-size: 24rpx;
+				font-weight: 500;
+				color: hsla(0, 0%, 100%, .9);
+			}
+		}
 	}
 
 	.weather--partial-weather {
 		left: 0;
+		top: 0;
 		padding: 0 24rpx;
 		position: fixed;
-		top: 0;
+		box-sizing: border-box;
 		width: 100%;
 		z-index: 500;
+		color: hsla(0, 0%, 100%, .9);
+
+		&__bg {
+			background: #232326;
+			border-bottom: 1px solid hsla(0, 0%, 100%, .03);
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
 
 		&__ctx {
 			align-items: center;
@@ -224,7 +315,7 @@
 			z-index: 501;
 
 			image {
-				display: none;
+				display: inline-block;
 				height: 50rpx;
 				margin-right: 12rpx;
 				width: 50rpx;
@@ -244,6 +335,7 @@
 		}
 	}
 
+	// 公共样式
 	.flex {
 		display: flex;
 		align-items: center;
