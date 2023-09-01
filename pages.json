@@ -47,6 +47,14 @@
         "backgroundColor": "#232326"
       }
     },
+    // 露营列表
+    {
+      "path": "pages/camps/list",
+      "style": {
+        "navigationBarTextStyle": "white",
+        "navigationStyle": "custom"
+      }
+    },
     // 露营详情页
     {
       "path": "pages/camps/detail-partials/partial-title",

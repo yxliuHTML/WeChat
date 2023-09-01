@@ -1,35 +1,88 @@
 <template>
-  <scroll-view class="damned" style="height: 100vh;white-space: nowrap;" :scroll-y="true" refresher-enabled="true"
-    :refresher-triggered="triggered" :refresher-threshold="100" refresher-background="#232326"
-    @refresherrefresh="onRefresh" @refresherrestore="onRestore">
-    <view class="container" style="padding-top: 75px; scroll-snap-align: none;">
-      <view class="container__gradient"></view>
-      <image class="" src="https://static.deerscript.com/uploads/2021-09-09/6139c9daeec53.png"
-        style="position: absolute; left: 0; top: 0; width: 100%;"></image>
-      <PartialInfo></PartialInfo>
+  <view class="">
+    <scroll-view class="damned" style="height: 100vh;white-space: nowrap;" :scroll-y="true" refresher-enabled="true"
+      :refresher-triggered="triggered" :refresher-threshold="100" refresher-background="#232326"
+      @refresherrefresh="onRefresh" @refresherrestore="onRestore">
+      <view class="container" style="padding-top: 75px; scroll-snap-align: none;">
+        <view class="container__gradient"></view>
+        <image class="" src="https://static.deerscript.com/uploads/2021-09-09/6139c9daeec53.png"
+          style="position: absolute; left: 0; top: 0; width: 100%;"></image>
+        <PartialInfo></PartialInfo>
+        <view class="calendar fwb">
+          <view class="left flex-center">
+            <view class="t1">周四入营</view>
+            <view class="t2">08月31日</view>
+          </view>
+          <view class="center">
+            <view class="t1">共 1
+              天</view>
+          </view>
+          <view class="right flex-center">
+            <view class="t1">周四离营</view>
+            <view class="t2">08月31日</view>
+          </view>
+        </view>
+        <!-- 套餐说明 -->
+        <DetailDesc></DetailDesc>
+        <!-- 套餐说明 end-->
+        <!-- 图片详情 -->
+        <view class="margin-top30">
+          <image class="info_image radius" mode="widthFix"
+            src="https://image.caiyunyi.com/camping/uploads/20/camp_img/20221117/9e054c48baad6e1ab5d9f707017fe481.jpg"
+            role="img" style="height: 459.681px;">
+          </image>
+        </view>
+        <!-- 图片详情 end -->
+        <!-- 须知 -->
+        <DetailNotice></DetailNotice>
+        <!-- 须知 end-->
+      </view>
+    </scroll-view>
+    <view class="container__toolbar flex active">
+      <view class="container__toolbar__bg"></view>
+      <view class="circle">
+        <image src="@/static/circle_friends.png">
+        </image>
+        <view>海报</view>
+      </view>
+      <view class="circle">
+        <image src="@/static/link.png">
+        </image>
+        <view>链接</view>
+      </view>
+      <button class="flex__auto primary">立即预定</button>
+      <button class="flex__auto green">
+        <text>分享</text>
+        <image src="/static/arrow-right-l.png">
+        </image>
+      </button>
     </view>
-  </scroll-view>
+  </view>
 </template>
 <script>
 import PartialInfo from './partial-info.vue'
+import DetailDesc from './detail-desc.vue'
+import DetailNotice from './detail-notice.vue'
 export default {
   options: {
     styleIsolation: 'shared'
   },
   components: {
     PartialInfo,
+    DetailDesc,
+    DetailNotice
   },
   data() {
     return {
       freshing: false,
-      triggered: false,
+      triggered: true,
     }
   },
   onLoad() {
-    this.freshing = false;
-    setTimeout(() => {
-      this.triggered = true;
-    }, 500)
+    // this.freshing = false;
+    // setTimeout(() => {
+    //   this.triggered = true;
+    // }, 500)
   },
   methods: {
     onRefresh() {
@@ -140,7 +193,8 @@ export default {
   position: fixed;
   transform: translate(0, 100%);
   transition: all .5s ease;
-  width: 100%
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .container__toolbar.active {
@@ -173,7 +227,7 @@ export default {
 
 .container__toolbar .circle view {
   color: hsla(0, 0%, 100%, .6);
-  font-size: 12rpx;
+  font-size: 22rpx;
   font-weight: 500
 }
 
@@ -265,5 +319,20 @@ export default {
   letter-spacing: 2rpx;
   line-height: 20rpx;
   margin-top: 20rpx
+}
+
+.fwb {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.center {
+  align-items: center;
+}
+
+.flex-center {
+  justify-content: center;
 }
 </style>

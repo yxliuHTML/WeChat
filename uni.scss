@@ -133,7 +133,7 @@ page {
   background-image: url(https://assets.deerscript.com/i/down-d.png);
 }
 .i-close {
-  background-image: url(https://assets.deerscript.com/i/close-d.png);
+  background-image: url(https://assets.deerscript.com/i/close-l.png);
 }
 .i-search {
   background-image: url(https://assets.deerscript.com/i/search-d.png);
@@ -486,13 +486,13 @@ page {
   padding-bottom: 30rpx;
 }
 .modal__title .sub {
-  font-size: 44rpx;
+  font-size: 22rpx;
   font-weight: 400;
   margin-top: 20rpx;
   opacity: 0.4;
 }
 .modal__title .close {
-  background: rgba(0, 0, 0, 0.075);
+  background: hsla(0, 0%, 100%, 0.075);
   border-radius: 50%;
   height: 28px;
   position: relative;

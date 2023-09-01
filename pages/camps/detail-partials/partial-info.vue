@@ -45,78 +45,78 @@ export default {
   z-index: 1;
 
   &__thumb {
-    border-radius: 8px;
-    box-shadow: 0 0 30px #303030;
-    height: 180px;
-    min-width: 125px;
+    border-radius: 16rpx;
+    box-shadow: 0 0 60rpx #303030;
+    height: 340rpx;
+    min-width: 250rpx;
     position: relative;
-    width: 130px
+    width: 260rpx;
   }
 
   &__thumbnail {
-    border-radius: 8px;
+    border-radius: 16rpx;
     height: 100%;
     width: 100%
   }
 
   &__corner {
-    height: 15px;
+    height: 30rpx;
     left: 0;
     position: absolute;
     top: 0;
-    width: 32px
+    width: 64rpx
   }
 
   &__robbin {
-    bottom: 10px;
-    height: 15px;
-    left: 10px;
+    bottom: 20rpx;
+    height: 30rpx;
+    left: 20rpx;
     position: absolute;
-    width: 28px
+    width: 216rpx
   }
 
   &__meta {
-    height: 180px;
-    margin-left: 12px;
-    padding-top: 8px;
+    height: 340rpx;
+    margin-left: 24rpx;
+    padding-top: 16rpx;
     position: relative
   }
 
   &__name {
-    font-size: 19px;
+    font-size: 38rpx;
     font-weight: 700;
-    margin-bottom: 7px
+    margin-bottom: 14rpx;
   }
 
   &__author {
-    margin-bottom: 12px;
+    margin-bottom: 24rpx;
 
     & text {
-      font-size: 13px;
+      font-size: 26rpx;
       font-weight: 500;
       opacity: .6
     }
 
     & image {
-      height: 16px;
-      margin-right: 3px;
-      width: 16px
+      height: 32rpx;
+      margin-right: 6rpx;
+      width: 32rpx;
     }
   }
 
 
   &__property {
-    margin-bottom: 6px;
+    margin-bottom: 12rpx;
 
     & view {
-      border: 1px solid #aeabb7;
-      border-radius: 5px;
-      font-size: 9px;
+      border: 2rpx solid #aeabb7;
+      border-radius: 10rpx;
+      font-size: 18rpx;
       font-weight: 500;
-      line-height: 1.75;
-      margin-bottom: 3px;
-      margin-right: 10px;
-      padding: 0 5px
+      line-height: 2.5;
+      margin-bottom: 6rpx;
+      margin-right: 20rpx;
+      padding: 0 10rpx
     }
 
     & view:last-child {
@@ -128,10 +128,10 @@ export default {
     }
 
     & view image {
-      height: 11px;
-      margin-right: 3px;
-      vertical-align: -1px;
-      width: 11px
+      height: 22rpx;
+      margin-right: 6rpx;
+      vertical-align: -2rpx;
+      width: 22rpx
     }
   }
 
@@ -140,23 +140,23 @@ export default {
     &__price view {
       display: inline-block;
       font-weight: 700;
-      margin-right: 10px;
+      margin-right: 20rpx;
 
       & .info--unit {
-        font-size: 11px
+        font-size: 22rpx
       }
 
       & .info--r {
-        font-size: 18px;
-        margin: 0 1px;
-        vertical-align: -1px
+        font-size: 116rpx;
+        margin: 0 2rpx;
+        vertical-align: -2rpx
       }
 
       & image {
-        height: 14px;
-        margin-right: 1px;
-        vertical-align: -3px;
-        width: 14px
+        height: 28rpx;
+        margin-right: 2rpx;
+        vertical-align: -6rpx;
+        width: 28rpx
       }
 
       &:last-child {
@@ -165,14 +165,14 @@ export default {
     }
 
     .info--question {
-      height: 20px;
+      height: 40rpx;
       opacity: .5;
-      width: 20px
+      width: 40rpx
     }
   }
 
   &__action {
-    bottom: 4px;
+    bottom: 8rpx;
     left: 0;
     position: absolute
   }
@@ -181,7 +181,7 @@ export default {
     color: #fff;
     display: inline-block;
     line-height: 1;
-    padding: 8px 16px;
+    padding: 16rpx 32rpx;
     position: relative
   }
 
@@ -196,38 +196,38 @@ export default {
   }
 
   &__action button image {
-    height: 14px;
-    margin-right: 6px;
+    height: 28rpx;
+    margin-right: 12rpx;
     position: relative;
-    vertical-align: -1px;
-    width: 16.66px
+    vertical-align: -2rpx;
+    width: 33.32rpx
   }
 
   &__action button text {
-    font-size: 12px;
+    font-size: 24rpx;
     font-weight: 500;
     opacity: .8;
     position: relative;
-    vertical-align: 1px
+    vertical-align: 2rpx
   }
 
   &__action button:last-child {
-    margin-left: 15px
+    margin-left: 30rpx
   }
 
   &__action button:last-child image {
-    height: 14px;
-    width: 14px
+    height: 28rpx;
+    width: 28rpx
   }
 
   &__played {
     align-items: center;
-    border-radius: 6px;
-    bottom: 4px;
+    border-radius: 12rpx;
+    bottom: 8rpx;
     display: flex;
     left: 0;
     overflow: hidden;
-    padding: 10px 15px;
+    padding: 20rpx 30rpx;
     position: absolute;
     width: 100%
   }
@@ -248,10 +248,10 @@ export default {
   }
 
   &__played__left text {
-    font-size: 12px;
+    font-size: 24rpx;
     font-weight: 700;
-    margin-right: 6px;
-    vertical-align: 2px
+    margin-right: 12rpx;
+    vertical-align: 4rpx
   }
 
   &__played__right {
@@ -259,10 +259,10 @@ export default {
   }
 
   &__played__right image {
-    height: 11px;
+    height: 22rpx;
     opacity: .3;
-    vertical-align: 1px;
-    width: 11px
+    vertical-align: 2rpx;
+    width: 22rpx
   }
 }
 
@@ -276,57 +276,57 @@ export default {
     display: inline-block;
 
     & text {
-      font-size: 11px;
-      margin-right: 1px;
+      font-size: 22rpx;
+      margin-right: 2rpx;
 
       &.info--bold {
-        font-size: 12px;
+        font-size: 24rpx;
         font-weight: 700
       }
     }
   }
 
   &__reduce {
-    border: 1px solid #55b6c8;
-    border-radius: 6px;
-    font-size: 16px;
+    border: 2rpx solid #55b6c8;
+    border-radius: 12rpx;
+    font-size: 32rpx;
     font-weight: 700;
-    height: 20px;
-    line-height: 17px;
+    height: 40rpx;
+    line-height: 34rpx;
     text-align: center;
-    width: 20px
+    width: 40rpx
   }
 
   &__num {
-    font-size: 13px;
+    font-size: 26rpx;
     font-weight: 500;
     text-align: center;
-    width: 30px
+    width: 60rpx;
   }
 
   &__increase {
     background: linear-gradient(90deg, #55e9bc, #55b6c8);
-    border-radius: 6px;
+    border-radius: 12rpx;
     color: #232326;
-    font-size: 16px;
+    font-size: 32rpx;
     font-weight: 700;
-    height: 20px;
-    line-height: 17px;
+    height: 40rpx;
+    line-height: 34rpx;
     text-align: center;
-    width: 20px
+    width: 40rpx;
   }
 }
 
 
 
 .info--unit {
-  font-size: 12px;
+  font-size: 24rpx;
   margin-right: 5px;
 
   &.info--thought {
     color: #888;
     font-weight: 400;
-    margin-left: 4px;
+    margin-left: 8rpx;
     text-decoration: line-through
   }
 }

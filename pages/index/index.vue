@@ -161,7 +161,7 @@ export default {
 		},
 		toCamps() {
 			uni.navigateTo({
-				url: `/pages/camps/detail-partials/partial-title`
+				url: `/pages/camps/list`
 			})
 		}
 	}
