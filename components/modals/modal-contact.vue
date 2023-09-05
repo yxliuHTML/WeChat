@@ -27,9 +27,9 @@
                     <image src="/static/wechat.png" role="img">
                     </image><text>复制微信号</text>
                   </button>
-                  <button class="flex__auto"><text>拨打电话</text>
-                    <image src="/static/tel.png" role="img">
-                    </image>
+                  <button class="flex__auto">
+                    <text>拨打电话</text>
+                    <image src="/static/tel.png" role="img"></image>
                   </button>
                 </view>
               </view>
@@ -78,12 +78,12 @@ export default {
 }
 
 .modal__qrcode {
-  padding: 30rpx
-}
+  padding: 30rpx;
 
-.modal__qrcode image {
-  border-radius: 20rpx;
-  width: 100%
+  image {
+    border-radius: 20rpx;
+    width: 100%
+  }
 }
 
 .modal__qrcode view {
@@ -120,15 +120,15 @@ export default {
   font-weight: 700;
   line-height: 96rpx;
   margin: 0 40rpx 0 0;
-  width: auto
-}
+  width: auto;
 
-.modal__actions button image {
-  height: 36rpx;
-  margin-left: 8rpx;
-  margin-right: -8rpx;
-  vertical-align: -8rpx;
-  width: 36rpx
+  image {
+    height: 36rpx;
+    margin-left: 8rpx;
+    margin-right: -8rpx;
+    vertical-align: -8rpx;
+    width: 36rpx
+  }
 }
 
 .modal__actions button:last-child {
@@ -137,11 +137,11 @@ export default {
 
 .modal__actions button.green {
   background: #57bd6a;
-  box-shadow: 0 20rpx 40rpx 0 rgba(87, 189, 106, .2)
-}
+  box-shadow: 0 20rpx 40rpx 0 rgba(87, 189, 106, .2);
 
-.modal__actions button.green image {
-  margin-left: -8rpx;
-  margin-right: 8rpx
+  image {
+    margin-left: -8rpx;
+    margin-right: 8rpx
+  }
 }
 </style>
