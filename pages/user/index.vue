@@ -24,7 +24,7 @@
 			</button>
 			<view class="user-meta">
 				<!-- <button open-type="getPhoneNumber" @getphonenumber="getPhoneNumber"> -->
-				<view @click="getUserPhone">
+				<view @click="getPhoneNumber">
 					<view class="user-name">
 						授权手机号
 					</view>
@@ -113,27 +113,19 @@ export default {
 		 * 一键获取手机号
 		 */
 		getPhoneNumber() {
+			let than = this
 			uni.login({
-				provider: "weixin",
-				success: function (res) {
-					let appid = "wxd1a7b3e6d6b0dcd3";
-					let secret = "2eb572f409cdf13e170eb8108dd97148";
-					let url =
-						"https://api.weixin.qq.com/sns/jscode2session?appid=" +
-						appid +
-						"&secret=" +
-						secret +
-						"&js_code=" +
-						res.code +
-						"&grant_type=authorization_code";
-					uni.request({
-						url: url, // 请求路径
-						success: (r) => {
-							console.log("r", r);
-							console.info("用户的openId", r.data.openid);
-						},
-					});
-				},
+				provider: 'weixin', //使用微信登录
+				success: function (loginRes) {
+					than.$request('/backend/test/wx/login', { code: loginRes.code }).then(res => {
+						console.log('接口成功：', res)
+					}).catch(err => {
+						uni.showToast({
+							title: "" + err.msg,
+							icon: 'none'
+						})
+					})
+				}
 			});
 		}
 	}
