@@ -43,5 +43,4 @@ const request = (url = '', method = 'GET', data = {}, header = {   //这里这�
     })
   })
 }
-
 export default request;

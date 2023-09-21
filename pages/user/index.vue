@@ -117,7 +117,7 @@ export default {
 			uni.login({
 				provider: 'weixin', //使用微信登录
 				success: function (loginRes) {
-					than.$request('/backend/test/wx/login', { code: loginRes.code }).then(res => {
+					than.$request('/backend/test/wx/login', 'GET', { code: loginRes.code }).then(res => {
 						console.log('接口成功：', res)
 					}).catch(err => {
 						uni.showToast({

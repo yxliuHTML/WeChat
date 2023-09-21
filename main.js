@@ -1,5 +1,5 @@
 import App from './App'
-import request from './api/request.js'
+import request from './utils/request.js'
 import uView from '@/uni_modules/uview-ui'
 Vue.use(uView)
 
